@@ -2,6 +2,11 @@ import streamlit as st
 import geopandas as gpd
 import plotly.graph_objects as go
 
+# Imports from other py files (currently state_highlight and filters)
+# Filters is currently not used since data has not been imported)
+from state_highlight import highlight_state
+from filters import apply_filters
+
 # Load shapefile
 states = gpd.read_file(
     "zip://Dataset and Project Descr./cb_2025_us_state_500k.zip"
@@ -29,6 +34,9 @@ fig = go.Figure(
         marker_line_width=0.5
     )
 )
+
+# calling to highlight selected state
+states = highlight_state(states)
 
 fig.update_geos(
     scope="usa",
