@@ -8,6 +8,9 @@ import sqlite3
 from state_highlight import highlight_state
 from filters import apply_filters
 
+# Placeholder Test
+st.title("UPDATED DASHBOARD TEST")
+
 # Connect to SQLite database
 conn = sqlite3.connect("my_database.db")
 
@@ -81,7 +84,7 @@ fig.update_layout(
 )
 
 # Display map in Streamlit
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, width="stretch")
 
 # Display filtered energy data
 st.subheader("Filtered Energy Data")
