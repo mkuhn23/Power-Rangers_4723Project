@@ -33,7 +33,7 @@ filtered_df = apply_filters(df)
 
 # Load shapefile
 states = gpd.read_file(
-    "zip://Dataset and Project Descr/cb_2025_us_state_500k.zip"
+    "Dataset and Project Descr/cb_2025_us_state_500k (1).zip"
 )
 
 # Remove territories
