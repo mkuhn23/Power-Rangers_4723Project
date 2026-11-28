@@ -8,21 +8,6 @@ import sqlite3
 from state_highlight import highlight_state
 from filters import apply_filters
 
-import os
-import zipfile
-
-# Check shapefile location
-path = "Dataset and Project Descr/cb_2025_us_state_500k.zip"
-
-st.write("File exists:", os.path.isfile(path))
-st.write("Valid ZIP:", zipfile.is_zipfile(path))
-
-if zipfile.is_zipfile(path):
-    with zipfile.ZipFile(path) as z:
-        st.write("Files inside ZIP:", z.namelist())
-
-states = gpd.read_file(path)
-
 # Connect to SQLite database
 conn = sqlite3.connect("my_database.db")
 
