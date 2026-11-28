@@ -8,9 +8,6 @@ import sqlite3
 from state_highlight import highlight_state
 from filters import apply_filters
 
-# Placeholder Test
-st.title("UPDATED DASHBOARD TEST")
-
 # Connect to SQLite database
 conn = sqlite3.connect("my_database.db")
 
@@ -36,7 +33,7 @@ filtered_df = apply_filters(df)
 
 # Load shapefile
 states = gpd.read_file(
-    "zip://Dataset and Project Descr./cb_2025_us_state_500k.zip"
+    "Dataset and Project Descr./cb_2025_us_state_500k.zip"
 )
 
 # Remove territories
